@@ -1,0 +1,16 @@
+p {
+    /*font-size:13px;*/
+    color:#808080;
+}
+strong {
+    /*font-size:13px;*/
+    color: #000;
+}
+strong.weights {
+    /*font-size:8px;*/
+    color: #000;
+}
+p.weights {
+    /*font-size:8px;*/
+    color:#808080;
+}

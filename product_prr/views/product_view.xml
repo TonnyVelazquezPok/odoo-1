@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_template_form_view_prr" model="ir.ui.view">
+            <field name="name">product.template.common.form.product_prr</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page name="Drawing files" string="Drawing files">
+                        <field name="drawing_files"
+                               widget="one2many">
+                            <tree editable = "bottom">
+                                <field name = "drawing_type"/>
+                                <field name = "drawing_owner"/>
+                                <field name = "drawing_number"/>
+                                <field name = "drawing_review"/>
+                                <field name = "drawing_date_revision"/>
+                                <field name = "see_production"/>
+                                <field name = "drawing_file"
+                                       widget="many2many_binary"
+                                       class="oe_inline"
+                                       options='{"size": [30, 30]}'/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="Product certification" string="Product certification">
+                        <field name="product_certifications"
+                               widget="one2many">
+                            <tree editable = "bottom">
+                                <field name = "name"/>
+                                <field name = "type"/>
+                                <field name = "specification"/>
+                                <field name = "sample_size"/>
+                                <field name = "scan_plan"/>
+                                <field name = "draw_area"/>
+                                <field name = "certification_type"/>
+                                <field name = "certifications_files"
+                                       widget="many2many_binary"
+                                       class="oe_inline"
+                                       options='{"size": [30, 30]}'/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="Welding document files" string="Welding documents">
+                        <field name="welding_documents"
+                               widget="one2many">
+                            <tree editable = "bottom">
+                                <field name = "description"/>
+                                <field name = "notes"/>
+                                <field name = "document_file"
+                                       widget="many2many_binary"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="Weight" string="Weights">
+                        <group position="inside">
+                            <group>
+                                <field name="gross_weight"/>
+                                <field name = "casting_weight"/>
+                                <field name = "part_weight"/>
+                            </group>
+                            <group>
+                                <field name = "pwm"/>
+                                <field name = "shipping_weight"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page name="Part numbers" string="Part Numbers">
+                        <field name="product_customer_id" widget="one2many">
+                            <tree editable = "bottom">
+                                <field name = "part_number"/>
+                                <field name = "customers" widget="many2many_tags"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+                <group name="group_general" position="inside">
+                    <field name="mold_qty" class="oe_inline"/>
+                    <field name="mould_type"/>
+                    <field name="injection_qty" class="oe_inline"/>
+                    <field name="external_specification"/>
+                    <field name="internal_specification"/>
+                    <field name="red_equ" class="oe_inline"/>
+                    <field name="avr"/>
+                    <field name="smr"/>
+                    <field name="cmr" class="oe_inline"/>
+                    <field name="coupon" class="oe_inline"/>
+                </group>
+            </field>
+        </record>
+    </data>
+
+    <record id="pattern_file_form" model="ir.ui.view">
+        <field name="name">product.issues</field>
+        <field name="model">product.issues</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="drawing_type"/>
+                        </group>
+                        <group>
+                            <field name="drawing_owner"/>
+                        </group>
+                        <group>
+                            <field name="drawing_date_revision"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="drawing_file" widget="many2many_binary" class="oe_inline" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="pattern_file_form" model="ir.ui.view">
+        <field name="name">product.welding.specification.document</field>
+        <field name="model">product.welding.specification.document</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="notes"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="document_file" widget="many2many_binary" class="oe_inline" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="res_partner_form" model="ir.ui.view">
+        <field name="name">product.customer</field>
+        <field name="model">product.customer</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name = "part_number"/>
+                        </group>
+                        <group>
+                            <field name = "customers" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <data>
+        <template id="assets_backend" name="PRR View" inherit_id="web._assets_primary_variables">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/product_prr/static/src/css/product_prr.css"/>
+            </xpath>
+        </template>
+    </data>
+
+</odoo>
