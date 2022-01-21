@@ -34,7 +34,11 @@
                                 <field name = "sample_size"/>
                                 <field name = "scan_plan"/>
                                 <field name = "draw_area"/>
-                                <field name = "certification_type"/>
+                                <field name = "statement_mtr"/>
+                                <field name = "table_chart_image_mtr"/>
+                                <field name = "pok_format"/>
+                                <field name = "customer_format"/>
+<!--                                <field name = "certification_type"/>-->
                                 <field name = "certifications_files"
                                        widget="many2many_binary"
                                        class="oe_inline"

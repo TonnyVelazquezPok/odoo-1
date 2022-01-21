@@ -298,22 +298,46 @@
                                                             <table class="table table-sm">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th><p class="weights"><strong class="weights">Paso:</strong> / Item:</p></th>
-                                                                        <th><p class="weights"><strong class="weights">Nombre del Proceso - Descripción:</strong> / Process name - Description :</p></th>
-                                                                        <th><p class="weights"><strong class="weights">Días en proceso:</strong> / Lead days:</p></th>
+                                                                        <th>
+                                                                            <p class="weights">
+                                                                                <strong class="weights">Paso:</strong>
+                                                                                / Item:
+                                                                            </p>
+                                                                        </th>
+                                                                        <th>
+                                                                            <p class="weights">
+                                                                                <strong class="weights">
+                                                                                    Nombre del Proceso - Descripción:
+                                                                                </strong> / Process name - Description :
+                                                                            </p>
+                                                                        </th>
+                                                                        <th>
+                                                                            <p class="weights">
+                                                                                <strong class="weights">Minutos en proceso:
+                                                                                </strong> / Lead minutes:</p></th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    <tr t-foreach="mrp_id.operation_ids" t-as="operation_id">
+                                                                    <tr t-foreach="mrp_id.operation_ids"
+                                                                        t-as="operation_id">
                                                                         <td><span t-field="operation_id.sequence"/></td>
-                                                                        <td><span t-field="operation_id.name"/></td>
-                                                                        <td><span t-field="operation_id.time_cycle"/></td>
+                                                                        <td>
+                                                                            <p class="weights">
+                                                                                <strong t-field="operation_id.name"/> -
+                                                                                <span
+                                                                                t-field="operation_id.process_notes"/>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <span t-field="operation_id.time_cycle"/>
+                                                                        </td>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
                                                                 <p>
-                                                                    <strong>Total de días en proceso :</strong> / Total lead-time (days):
-                                                                </p>Duda
+                                                                    <strong>Total de minutos en proceso :</strong>
+                                                                    / Total lead-time (minutes):
+                                                                </p><span t-field="mrp_id.time_cycle_manual_total"/> min
                                                         </div>
                                                     </div>
                                                 </td>

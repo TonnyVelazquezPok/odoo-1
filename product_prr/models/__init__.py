@@ -8,3 +8,4 @@ from . import res_partner
 from . import quality_specification
 from . import mrp_bom
 from . import product_welding_specification_document
+from . import mrp_routing_workcenter

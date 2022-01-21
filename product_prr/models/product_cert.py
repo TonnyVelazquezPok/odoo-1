@@ -18,7 +18,7 @@ class ProductCert(models.Model):
     )
     certification_type = fields.Char(
         string='Certification type',
-        size=50,
+        compute='_compute_get_type'
     )
     product_template_id = fields.Many2one(
         comodel_name='product.template',
@@ -29,58 +29,74 @@ class ProductCert(models.Model):
         string="Attachment",
         help='You can attach the copy of your Letter'
     )
+    statement_mtr = fields.Boolean(
+        strong='Statement on MTR',
+        default=False,
+    )
+    table_chart_image_mtr = fields.Boolean(
+        strong='Table/Chart/Image on MTR',
+        default=False,
+    )
+    pok_format = fields.Boolean(
+        strong='Individual Report (POK format)',
+        default=False,
+    )
+    customer_format = fields.Boolean(
+        strong='Individual Report (Customer format)',
+        default=False,
+    )
     name = fields.Selection(
         [
-            ('05 - Chemical Analysis', '05 - Chemical Analysis'),
-            ('07 - Quality Test Cupon', '07 - Quality Test Cupon'),
-            ('10 - Tension Properties', '10 - Tension Properties'),
-            ('15 - Impact Properties', '15 - Impact Properties'),
-            ('20 - Hardness Testing', '20 - Hardness Testing'),
-            ('23 - Heat Treat Cycle', '23 - Heat Treat Cycle'),
-            ('25 - Heat Treat Charts', '25 - Heat Treat Charts'),
-            ('30 - Metallographic Examination', '30 - Metallographic Examination'),
-            ('35 - Visual Test', '35 - Visual Test'),
-            ('40 - Penetrant Test', '40 - Penetrant Test'),
-            ('45 - Magnetic Test', '45 - Magnetic Test'),
-            ('50 - Ultrasonic Test', '50 - Ultrasonic Test'),
-            ('53 - Volumetric Destructive Test', '53 - Volumetric Destructive Test'),
-            ('55 - Radiographic Test', '55 - Radiographic Test'),
-            ('57 - Volumetric Summary NDE', '57 - Volumetric Summary NDE'),
-            ('60 - Dimensional Verification', '60 - Dimensional Verification'),
-            ('65 - Lot Number', '65 - Lot Number'),
-            ('66 - PED 2014/68/EU', '66 - PED 2014/68/EU'),
-            ('67 - Certificate of Conformity', '67 - Certificate of Conformity'),
-            ('68 - Request for Deviation', '68 - Request for Deviation'),
-            ('69 - NACE MR0175', '69 - NACE MR0175'),
-            ('70 - Hardsurfaced', '70 - Hardsurfaced'),
-            ('75 - Surface Treat', '75 - Surface Treat'),
-            ('76 - Surface Coating', '76 - Surface Coating'),
-            ('77 - Weigth', '77 - Weigth'),
-            ('78 - Traceability Marking', '78 - Traceability Marking'),
-            ('83 - Welding Repair', '83 - Welding Repair'),
-            ('99 - Verify Before Shipment', '99 - Verify Before Shipment'),
+            ('05_chemical', '05 - Chemical Analysis'),
+            ('07_quality', '07 - Quality Test Cupon'),
+            ('10_tension', '10 - Tension Properties'),
+            ('15_impact', '15 - Impact Properties'),
+            ('20_hardness', '20 - Hardness Testing'),
+            ('23_heat_cycle', '23 - Heat Treat Cycle'),
+            ('25_heat_charts', '25 - Heat Treat Charts'),
+            ('30_metallograpich', '30 - Metallographic Examination'),
+            ('35_visual', '35 - Visual Test'),
+            ('40_penetrant', '40 - Penetrant Test'),
+            ('45_magnetic', '45 - Magnetic Test'),
+            ('50_ultrasonic', '50 - Ultrasonic Test'),
+            ('53_volumetric_destructive', '53 - Volumetric Destructive Test'),
+            ('55_radiographic', '55 - Radiographic Test'),
+            ('57_volumetric_nde', '57 - Volumetric Summary NDE'),
+            ('60_dimensional', '60 - Dimensional Verification'),
+            ('65_lot', '65 - Lot Number'),
+            ('66_ped', '66 - PED 2014/68/EU'),
+            ('67_certificate', '67 - Certificate of Conformity'),
+            ('68_deviation', '68 - Request for Deviation'),
+            ('69_mr0175', '69 - NACE MR0175'),
+            ('70_hardsurfaced', '70 - Hardsurfaced'),
+            ('75_surface_treat', '75 - Surface Treat'),
+            ('76_surface_coating', '76 - Surface Coating'),
+            ('77_weigth', '77 - Weigth'),
+            ('78_traceability', '78 - Traceability Marking'),
+            ('83_welding', '83 - Welding Repair'),
+            ('99_shipment', '99 - Verify Before Shipment'),
         ],
         string='Certification',
     )
     type = fields.Selection(
         [
             ('Ensamble', 'Ensamble'),
-            ('Ensamble (Fund)', 'Ensamble (Fund)'),
-            ('Fund. & Maq.', 'Fund. & Maq.'),
-            ('Fund. Cliente', 'Fund. Cliente'),
-            ('Fund. PA. PS.', 'Fund. PA. PS.'),
-            ('Fundición', 'Fundición'),
-            ('Fund. & PA', 'Fund. & PA'),
-            ('Lote de PA', 'Lote de PA'),
-            ('Maquinado', 'Maquinado'),
-            ('Maq. & PA', 'Maq. & PA'),
-            ('Modelo', 'Modelo'),
-            ('N/A', 'N/A'),
-            ('PA - Fund.', 'PA - Fund.'),
-            ('PA - Modelo', 'PA - Modelo'),
-            ('PA - Pz Sacrificio', 'PA - Pz Sacrificio'),
-            ('Solo PA', 'Solo PA'),
-            ('Solo PA Fund.', 'Solo PA Fund.'),
+            ('Ensamble_found', 'Ensamble (Fund)'),
+            ('fund_maq', 'Fund. & Maq.'),
+            ('fund_Cliente', 'Fund. Cliente'),
+            ('fund_pa_ps', 'Fund. PA. PS.'),
+            ('fundición', 'Fundición'),
+            ('fund_pa', 'Fund. & PA'),
+            ('lote_pa', 'Lote de PA'),
+            ('maquinado', 'Maquinado'),
+            ('maq_pa', 'Maq. & PA'),
+            ('modelo', 'Modelo'),
+            ('n/a', 'N/A'),
+            ('pa_fund.', 'PA - Fund.'),
+            ('pa_modelo', 'PA - Modelo'),
+            ('pa_pz_sacrificio', 'PA - Pz Sacrificio'),
+            ('solo_pa', 'Solo PA'),
+            ('solo_pa_fund.', 'Solo PA Fund.'),
         ],
         string='Product Type',
     )
@@ -89,38 +105,80 @@ class ProductCert(models.Model):
             ('8%', '8%'),
             ('10%', '10%'),
             ('100%', '100%'),
-            ('1 cada 10', '1 cada 10'),
-            ('1 cada 10 cada Colada', '1 cada 10 cada Colada'),
-            ('1 cada 12', '1 cada 12'),
-            ('1 cada 15', '1 cada 15'),
-            ('1 cada árbol', '1 cada árbol'),
-            ('1 por colada', '1 por colada'),
-            ('1 por colada maestra', '1 por colada maestra'),
-            ('1 por día', '1 por día'),
-            ('1 por lote TT', '1 por lote TT'),
-            ('1 por lote TT de colada', '1 por lote TT de colada'),
-            ('1 por lote TT por colada', '1 por lote TT por colada'),
-            ('1 por Pedido', '1 por Pedido'),
-            ('1 por pieza', '1 por pieza'),
-            ('1 pz cada 6 meses', '1 pz cada 6 meses'),
-            ('10%, min 3', '10%, min 3'),
-            ('100% in Critical Zones', '100% in Critical Zones'),
-            ('100% of Casting Surfaces', '100% of Casting Surfaces'),
-            ('100% segun SP-UT', '100% segun SP-UT'),
-            ('100%, Only in UT Zone', '100%, Only in UT Zone'),
-            ('Eventual', 'Eventual'),
-            ('Level II, AQL 1.5', 'Level II, AQL 1.5'),
-            ('Lote de PA', 'Lote de PA'),
-            ('Nivel II con 1.5 AQL', 'Nivel II con 1.5 AQL'),
-            ('Nivel II con 4.0 AQL', 'Nivel II con 4.0 AQL'),
-            ('PA Pieza Sacrificio', 'PA Pieza Sacrificio'),
-            ('PNDG', 'PNDG'),
-            ('Por Envio', 'Por Envio'),
-            ('Pre-machining zone only', 'Pre-machining zone only'),
-            ('Segun PO', 'Segun PO'),
-            ('Segun Vol. NDE', 'Segun Vol. NDE'),
-            ('Solo PA', 'Solo PA'),
-            ('Solo PA Fundicion', 'Solo PA Fundicion'),
+            ('1_cada_10', '1 cada 10'),
+            ('1_cada_10_cada_colada', '1 cada 10 cada Colada'),
+            ('1_cada_12', '1 cada 12'),
+            ('1_cada_15', '1 cada 15'),
+            ('1_cada árbol', '1 cada árbol'),
+            ('1_por colada', '1 por colada'),
+            ('1_por colada maestra', '1 por colada maestra'),
+            ('1_por_día', '1 por día'),
+            ('1_por_lote_tt', '1 por lote TT'),
+            ('1_por_lote_tt_de_colada', '1 por lote TT de colada'),
+            ('1_por_lote_tt_por_colada', '1 por lote TT por colada'),
+            ('1_por_pedido', '1 por Pedido'),
+            ('1_por_pieza', '1 por pieza'),
+            ('1_pz_cada_6_meses', '1 pz cada 6 meses'),
+            ('10%_min_3', '10%, min 3'),
+            ('100_in_critical_zones', '100% in Critical Zones'),
+            ('100%_of_casting_surfaces', '100% of Casting Surfaces'),
+            ('100%_segun_sp_ut', '100% segun SP-UT'),
+            ('100%_only_in_ut_zone', '100%, Only in UT Zone'),
+            ('eventual', 'Eventual'),
+            ('level_ii, AQL 1.5', 'Level II, AQL 1.5'),
+            ('lote_pa', 'Lote de PA'),
+            ('nivel_ii_con_1.5_aql', 'Nivel II con 1.5 AQL'),
+            ('nivel_ii_con_4.0_aql', 'Nivel II con 4.0 AQL'),
+            ('pa_pieza_sacrificio', 'PA Pieza Sacrificio'),
+            ('pndg', 'PNDG'),
+            ('por_envio', 'Por Envio'),
+            ('pre-machining_zone_only', 'Pre-machining zone only'),
+            ('segun_po', 'Segun PO'),
+            ('segun_vol. NDE', 'Segun Vol. NDE'),
+            ('solo_pa', 'Solo PA'),
+            ('solo_pa_fundicion', 'Solo PA Fundicion'),
         ],
         string='Sample size',
     )
+
+    @api.depends('statement_mtr', 'table_chart_image_mtr', 'pok_format', 'customer_format')
+    def _compute_get_type(self):
+        for cert in self:
+            if cert.statement_mtr is True and cert.table_chart_image_mtr is False and \
+                cert.pok_format is False and cert.customer_format is False:
+
+                cert.certification_type = 'En MTR'
+
+            elif cert.statement_mtr is False and cert.table_chart_image_mtr is True and \
+                cert.pok_format is False and cert.customer_format is False:
+
+                cert.certification_type = 'Tabla, imagen o gráfico en MTR'
+
+            elif cert.statement_mtr is False and cert.table_chart_image_mtr is False and \
+                cert.pok_format is True and cert.customer_format is False:
+
+                cert.certification_type = 'Certificado en formato POK'
+
+            elif cert.statement_mtr is False and cert.table_chart_image_mtr is False and \
+                cert.pok_format is False and cert.customer_format is True:
+
+                cert.certification_type = 'Certificado en formato Cliente'
+
+            elif cert.statement_mtr is True and cert.table_chart_image_mtr is True and \
+                cert.pok_format is False and cert.customer_format is False:
+
+                cert.certification_type = 'En MTR y Tabla, imagen o gráfico en MTR'
+
+            elif cert.statement_mtr is True and cert.table_chart_image_mtr is False and \
+                cert.pok_format is True and cert.customer_format is False:
+
+                cert.certification_type = 'En MTR y Certificado en formato POK'
+
+            elif cert.statement_mtr is True and cert.table_chart_image_mtr is False and \
+                cert.pok_format is True and cert.customer_format is True:
+
+                cert.certification_type = 'En MTR y Certificado en formato Cliente'
+
+            else:
+
+                cert.certification_type = 'Error; consultar con ingeniería'

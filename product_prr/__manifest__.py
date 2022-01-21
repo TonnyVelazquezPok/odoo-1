@@ -23,6 +23,7 @@
 
         "views/product_view.xml",
         "views/product_mrp_bom_view.xml",
+        "views/product_mrp_routing_workcenter_view.xml",
         "views/product_menu_views.xml",
 
         "report/product_prr_report.xml",
