@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- Quality specification chemical -->
+    <record id="quality_specification_chemical_view_form" model="ir.ui.view">
+        <field name="name">quality.specification.chemical.form</field>
+        <field name="model">quality.specification.chemical</field>
+        <field name="arch" type="xml">
+            <form string="Chemical test">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="minimum"/>
+                        <field name="maximum" />
+                        <field name="sequence"/>
+                        <field name="combination"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="quality_specification_chemical_view_tree" model="ir.ui.view">
+        <field name="name">quality.specification.chemical.tree</field>
+        <field name="model">quality.specification.chemical</field>
+        <field name="arch" type="xml">
+            <tree string="Chemical Tests" editable="top">
+                <field name="combination"/>
+                <field name="name"/>
+                <field name="element_id"/>
+                <field name="formula_id"/>
+                <field name="minimum"/>
+                <field name="maximum"/>
+                <field name="internal_minimum"/>
+                <field name="internal_maximum"/>
+                <field name="sequence"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="quality_specification_chemical_action" model="ir.actions.act_window">
+        <field name="name">Chemical Specifications</field>
+        <field name="res_model">quality.specification.chemical</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Quality specification physical -->
+    <record id="quality_specification_physical_view_form" model="ir.ui.view">
+        <field name="name">quality.specification.physical.form</field>
+        <field name="model">quality.specification.physical</field>
+        <field name="arch" type="xml">
+            <form string="Physical test">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="minimum"/>
+                        <field name="maximum" />
+                        <field name="uom_id"/>
+                        <field name="sequence"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="quality_specification_physical_view_tree" model="ir.ui.view">
+        <field name="name">quality.specification.physical.tree</field>
+        <field name="model">quality.specification.physical</field>
+        <field name="arch" type="xml">
+            <tree string="Physical Tests" editable="top">
+                <field name="name"/>
+                <field name="minimum"/>
+                <field name="maximum"/>
+                <field name="uom_id"/>
+                <field name="sequence" widget="handle"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="quality_specification_physical_action" model="ir.actions.act_window">
+        <field name="name">Physical Specifications</field>
+        <field name="res_model">quality.specification.physical</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Quality specification association -->
+    <record id="quality_specification_association_view_form" model="ir.ui.view">
+        <field name="name">quality.specification.association.form</field>
+        <field name="model">quality.specification.association</field>
+        <field name="arch" type="xml">
+            <form string="Association">
+                <sheet>
+                    <group>
+                        <field name="product_id"/>
+                        <field name="customer_id"/>
+                        <field name="sequence"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+     <record id="quality_specification_association_view_tree" model="ir.ui.view">
+        <field name="name">quality.specification.association.tree</field>
+        <field name="model">quality.specification.association</field>
+        <field name="arch" type="xml">
+            <tree string="Association" editable="top">
+                <field name="product_id"/>
+                <field name="customer_id"/>
+                <field name="sequence" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Quality specification Files -->
+    <record id="quality_specification_file_view_form" model="ir.ui.view">
+        <field name="name">quality.specification.file.form</field>
+        <field name="model">quality.specification.file</field>
+        <field name="arch" type="xml">
+            <form string="Files">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="notes"/>
+                        <field name="file" filename="file_name" widget="binary" />
+                        <field name="file_name" invisible="1" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+     <record id="quality_specification_file_view_tree" model="ir.ui.view">
+        <field name="name">quality.specification.file.tree</field>
+        <field name="model">quality.specification.file</field>
+        <field name="arch" type="xml">
+            <tree string="Files" editable="top">
+                <field name="name"/>
+                <field name="notes"/>
+                <field name="file" filename="file_name" widget="binary" />
+                <field name="file_name" invisible="1" />
+            </tree>
+        </field>
+    </record>
+
+     <!-- Quality specification Parameters -->
+    <record id="quality_specification_parameter_view_form" model="ir.ui.view">
+        <field name="name">quality.specification.parameter.form</field>
+        <field name="model">quality.specification.parameter</field>
+        <field name="arch" type="xml">
+            <form string="Parameters">
+                <sheet>
+                    <group>
+                        <field name="sequence"/>
+                        <field name="name"/>
+                        <field name="uom_id"/>
+                        <field name="minimum"/>
+                        <field name="maximum"/>
+                        <field name="grade"/>
+                        <field name="set_point"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+     <record id="quality_specification_parameter_view_tree" model="ir.ui.view">
+        <field name="name">quality.specification.parameter.tree</field>
+        <field name="model">quality.specification.parameter</field>
+        <field name="arch" type="xml">
+            <tree string="Parameters" editable="top">
+                <field name="sequence"/>
+                <field name="name"/>
+                <field name="uom_id"/>
+                <field name="minimum"/>
+                <field name="maximum"/>
+                <field name="grade"/>
+                <field name="set_point"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- Quality Specification -->
+    <record id="quality_specification_view_form" model="ir.ui.view">
+        <field name="name">quality.specification.form</field>
+        <field name="model">quality.specification</field>
+        <field name="arch" type="xml">
+            <form string="Specification">
+                <sheet>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name" string="Specification"/>
+                        <h1>
+                            <field name="name" placeholder="Specification"/>
+                        </h1>
+                    </div>
+                    <field name="active" invisible="1"/>
+                    <notebook>
+                        <page string="General Information">
+                            <group>
+                                <field name="description"/>
+                                <field name="notes"/>
+                            </group>
+                        </page>
+                        <page string="Chemical">
+                            <group string="">
+                                <field name="specification_chemical_ids"/>
+                            </group>
+                            <group string="">
+                                <field name="balance_element_id"/>
+                                <field name="minimum"/>
+                                <field name="maximum"/>
+                                <field name="non_defined"/>
+                                <field name="nde_max"/>
+                            </group>
+                        </page>
+                        <page string="Physical">
+                            <field name="specification_physical_ids"/>
+                        </page>
+                        <page string="Association">
+                            <field name="specification_association_ids"/>
+                        </page>
+                        <page string="Files">
+                            <field name="specification_file_ids"/>
+                        </page>
+                        <page string="Parameters">
+                            <field name="specification_parameter_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="quality_specification_view_tree" model="ir.ui.view">
+        <field name="name">quality.specification.tree</field>
+        <field name="model">quality.specification</field>
+        <field name="arch" type="xml">
+            <tree string="Specification">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="quality_specification_action" model="ir.actions.act_window">
+        <field name="name">Specifications</field>
+        <field name="res_model">quality.specification</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

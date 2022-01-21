@@ -1,0 +1,108 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* quality_specifications
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-17 20:53+0000\n"
+"PO-Revision-Date: 2021-10-17 20:53+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: quality_specifications
+#: model:ir.model.fields,field_description:quality_specifications.field_quality_specification__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: quality_specifications
+#: model:ir.ui.menu,name:quality_specifications.test_first_level_menu
+msgid "Catalogs"
+msgstr "Catálogos"
+
+#. module: quality_specifications
+#: model:ir.model.fields,field_description:quality_specifications.field_quality_specification__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: quality_specifications
+#: model:ir.model.fields,field_description:quality_specifications.field_quality_specification__create_date
+msgid "Created on"
+msgstr "Creado él"
+
+#. module: quality_specifications
+#: model:ir.model.fields,field_description:quality_specifications.field_quality_specification__description
+#: model_terms:ir.ui.view,arch_db:quality_specifications.quality_specification_view_form
+msgid "Description"
+msgstr "Descripción"
+
+#. module: quality_specifications
+#: model:ir.model.fields,field_description:quality_specifications.field_quality_specification__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: quality_specifications
+#: model:ir.model.fields,field_description:quality_specifications.field_quality_specification__id
+msgid "ID"
+msgstr "ID"
+
+#. module: quality_specifications
+#: model:ir.model.fields,help:quality_specifications.field_quality_specification__active
+msgid ""
+"If unchecked, it will allow you to hide the specification without removing "
+"it."
+msgstr ""
+
+#. module: quality_specifications
+#: model:ir.model.fields,field_description:quality_specifications.field_quality_specification____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: quality_specifications
+#: model:ir.model.fields,field_description:quality_specifications.field_quality_specification__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: quality_specifications
+#: model:ir.model.fields,field_description:quality_specifications.field_quality_specification__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: quality_specifications
+#: model:ir.model.fields,field_description:quality_specifications.field_quality_specification__notes
+#: model_terms:ir.ui.view,arch_db:quality_specifications.quality_specification_view_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: quality_specifications
+#: model:ir.ui.menu,name:quality_specifications.test_menu_root
+msgid "Quality"
+msgstr "Calidad"
+
+#. module: quality_specifications
+#: model:ir.model,name:quality_specifications.model_quality_specification
+msgid "Quality Specification"
+msgstr "Especificación de calidad"
+
+#. module: quality_specifications
+#: model:ir.model.fields,field_description:quality_specifications.field_quality_specification__name
+#: model_terms:ir.ui.view,arch_db:quality_specifications.quality_specification_view_form
+#: model_terms:ir.ui.view,arch_db:quality_specifications.quality_specification_view_tree
+msgid "Specification"
+msgstr "Especificacion"
+
+#. module: quality_specifications
+#: model:ir.actions.act_window,name:quality_specifications.quality_specification_action
+#: model:ir.ui.menu,name:quality_specifications.quality_specification_menu_action
+msgid "Specifications"
+msgstr "Especificaciones"
+
+#. module: quality_specifications
+#: model:ir.model.constraint,message:quality_specifications.constraint_quality_specification_name
+msgid "There exist an specification with the selected name"
+msgstr "Ya existe una especificación con este nombre"
