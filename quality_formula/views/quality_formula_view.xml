@@ -1,0 +1,45 @@
+<odoo>
+  <data>
+
+  <record id="quality_formula_view_form" model="ir.ui.view">
+    <field name="name">quality.formula.form</field>
+    <field name="model">quality.formula</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <div class="oe_title">
+            <label for="name" string="Formula Abbreviation"/>
+            <h1>
+              <field name="name"/>
+            </h1>
+          </div>
+          <group>
+            <field name="description"/>
+            <field name="formula"/>
+            <field name="notes"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+    <record model="ir.ui.view" id="quality_formula_view_tree">
+      <field name="name">Element Formula</field>
+      <field name="model">quality.formula</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="formula"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="quality_formula_action">
+      <field name="name">Element Formula</field>
+      <field name="res_model">quality.formula</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>
