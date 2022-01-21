@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem id="test_menu_root" name="Quality">
+        <menuitem id="test_first_level_menu" name="Catalogs">
+            <menuitem id="quality_specification_menu_action"
+                action="quality_specification_action"/>
+            <menuitem id="quality_chemical_element_menu_list"
+                name="Chemical Element"
+                action="quality_chemical_element.quality_chemical_element_action"/>
+            <menuitem id="quality_formula_menu_list"
+                name="Formula"
+                action="quality_formula.quality_formula_action"/>
+        </menuitem>
+    </menuitem>
+</odoo>

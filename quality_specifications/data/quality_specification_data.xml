@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--
+             Precisions
+        -->
+        <record forcecreate="True" id="specification_physical" model="decimal.precision">
+            <field name="name">Specification Physical</field>
+            <field name="digits">2</field>
+        </record>
+        <record forcecreate="True" id="specification_chemical" model="decimal.precision">
+            <field name="name">Specification Chemical</field>
+            <field name="digits">3</field>
+        </record>
+
+    </data>
+</odoo>
