@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product_prr_report" model="ir.actions.report">
+        <field name="name">Product Review Report (PRR)</field>
+        <field name="model">product.template</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">product_prr.prr_report_view</field>
+        <field name="report_file">product_prr.prr_report_view</field>
+        <field name="binding_model_id" ref="product_prr.model_product_template"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="product_prr_report2" model="ir.actions.report">
+        <field name="name">Time Off Summary</field>
+        <field name="model">product.template</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">product_prr.prr_report_view</field>
+        <field name="report_file">product_prr.prr_report_view</field>
+    </record>
+
+    <template id="prr_report_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 class="text-right">PRODUCT REVIEW REPORT / SHEET </h2>
+
+                        <div class="row mt32 mb32">
+                            <div class="col-10 border-dark rounded">
+                                <div class="row mt32 mb32">
+                                    <div class="col-5 border border-dark rounded">
+                                        <p>
+                                            <strong>Descripción: </strong>/Description:
+                                        </p><span t-field="o.description"/>
+                                    </div>
+                                    <div class="col-4 border border-dark rounded">
+                                        <p>
+                                            <strong>NP POK:</strong> /POK PN:
+                                        </p><p style="color:#FF0000;font-size:18px;">Rev. <span t-field="o.name"/></p>
+                                    </div>
+                                    <div class="col-3 border border-dark rounded">
+                                        <p>
+                                            <strong>ER:</strong> / Red. Eq.:
+                                        </p><span t-field="o.red_equ"/>
+                                    </div>
+                                </div>
+                                <div class="row mt32 mb32">
+                                    <div class="col-4 border border-dark rounded">
+                                        <p>
+                                            <strong>Apodo:</strong> /Nickname:
+                                        </p><span t-field="o.default_code"/>
+                                    </div>
+                                    <div class="col-2 border border-dark rounded">
+                                        <p>
+                                            <strong>Aleación:</strong> /Alloy:
+                                        </p><span t-field="o.internal_specification"/>
+                                    </div>
+                                    <div class="col-2 border border-dark rounded">
+                                        <p>
+                                            <strong>Rel. Area volúmen:</strong> /AVR:
+                                        </p><span t-field="o.avr"/>
+                                    </div>
+                                    <div class="col-2 border border-dark rounded">
+                                        <p>
+                                            <strong>Rel. Arena - Metal:</strong> /SMR:
+                                        </p><span t-field="o.smr"/>
+                                    </div>
+                                    <div class="col-2 border border-dark rounded">
+                                        <p>
+                                            <strong>Rel. Cer. - Metal:</strong> /CMR:
+                                        </p><span t-field="o.cmr"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2 border-dark rounded">
+                                <div class="row mt32 mb32">
+                                    <div class="col-12 border border-dark rounded">
+                                        <span t-field="o.image_1920"
+                                        t-options='{"widget": "image", "preview_image": "image_512", "class": "d-block mx-auto mb16"}'/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt32 mb32">
+                            <div class="col-6 border border-dark rounded">
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th><p class="weights"><strong>Número de parte Cliente:</strong> / Customer part number:</p></th>
+                                        </tr>
+                                        <tr t-foreach="o.product_customer_id" t-as="customer_id">
+                                            <tr t-foreach="customer_id.customers" t-as="customer">
+                                                <td>
+                                                    <span style="color:#0000FF;font-size:18px;" t-field="customer.name"/>
+                                                    (<span t-field="customer_id.part_number"/>)
+                                                </td>
+                                            </tr>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <div class="col-3 border border-dark rounded">
+                                <p>
+                                    <strong>Tipo de Moldeo:</strong> /Mold Type:
+                                </p><span t-field="o.mould_type"/>
+                            </div>
+                            <div class="col-3 border">
+                                <div class="row mt32 mb32">
+                                    <div class="col-12 border border-dark rounded">
+                                        <p><strong>Especificación:</strong> /Specification:</p>
+                                        <span t-field="o.external_specification"/>
+                                    </div>
+                                </div>
+                                <div class="row mt32 mb32">
+                                    <div class="col-12 border border-dark rounded">
+                                        <table class="table table-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th><p class="weights"><strong>Procedimiento de soldadura:</strong> /WPS:</p></th>
+                                                </tr>
+                                                <tr t-foreach="o.welding_documents" t-as="document">
+                                                    <td><span t-field="document.description"/></td>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt32 mb32">
+                            <div class="col-4 border border-dark rounded">
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th><p class="weights"><strong>Producto Req:</strong> / Req. Product:</p></th>
+                                        </tr>
+                                        <tr t-foreach="o.product_mrp.byproduct_ids" t-as="mrp">
+                                            <td><span t-field="mrp.product_id.name"/></td>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <div class="col-4">
+                                <div class="row mt32 mb32">
+                                    <div class="col-12 border border-dark rounded">
+                                        <p><strong>Qty p/ mold:</strong> /Cant. por molde:
+                                        </p><span t-field="o.mold_qty"/>
+                                    </div>
+                                </div>
+                                <div class="row mt32 mb32">
+                                    <div class="col-12 border border-dark rounded">
+                                        <p><strong>Qty p/ Injec:</strong> /Cant. por inyec:
+                                        </p><span t-field="o.injection_qty"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 border border-dark rounded">
+                                <p>
+                                    <strong>Cupón:</strong> /QTC:
+                                </p><span t-field="o.coupon"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 border border-dark rounded">
+                                <p class="weights">
+                                    <strong class="weights">Pesos:</strong> / Weights:
+                                </p>
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th><p class="weights"><strong class="weights">GWP: Metal líquido:</strong> / Liquid metal:</p></th>
+                                            <th><p class="weights"><strong class="weights">CWP En bruto:</strong> / Raw:</p></th>
+                                            <th><p class="weights"><strong class="weights">PWP Fund. Term:</strong> / Finished casting:</p></th>
+                                            <th><p class="weights"><strong class="weights">PWM Maq. Fina:</strong> / Finish machined:</p></th>
+                                            <th><p class="weights"><strong class="weights">SWP Shipping:</strong> / De Embarque:</p></th>
+                                            <th><p class="weights"><strong class="weights">Yield en Bruto:</strong></p></th>
+                                            <th><p class="weights"><strong class="weights">Yield de Casting:</strong></p></th>
+                                            <th><p class="weights"><strong class="weights">Yield Total:</strong></p></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span t-field="o.gross_weight"/></td>
+                                            <td><span t-field="o.casting_weight"/></td>
+                                            <td><span t-field="o.part_weight"/></td>
+                                            <td><span t-field="o.pwm"/></td>
+                                            <td><span t-field="o.shipping_weight"/></td>
+                                            <td><span t-field="o.gross_yield"/></td>
+                                            <td><span t-field="o.casting_yield"/></td>
+                                            <td><span t-field="o.total_yield"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="row mt32 mb32">
+                            <div class="col-12 border border-dark rounded">
+                                <p>
+                                    <strong>Drawings:</strong> / Dibujos:
+                                </p>
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th><p class="weights"><strong class="weights">Tipo de Dibujo:</strong> / Drawing type:</p></th>
+                                            <th><p class="weights"><strong class="weights">Dibujo de:</strong> / Drawing owner:</p></th>
+                                            <th><p class="weights"><strong class="weights">Número de Dibujo:</strong> / Drawing number:</p></th>
+                                            <th><p class="weights"><strong class="weights">Revisión de dibujo:</strong> / Drawing revision:</p></th>
+                                            <th><p class="weights"><strong class="weights">Fecha Rev:</strong> / Rev. date:</p></th>
+                                            <th><p class="weights"><strong class="weights">Disponible produccion:</strong> / Available production:</p></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach="o.drawing_files" t-as="file">
+                                            <td><span t-field="file.drawing_type"/></td>
+                                            <td><span t-field="file.drawing_owner"/></td>
+                                            <td><span t-field="file.drawing_number"/></td>
+                                            <td><span t-field="file.drawing_review"/></td>
+                                            <td><span t-field="file.drawing_date_revision"/></td>
+                                            <td><span t-field="file.see_production"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row mt32 mb32">
+                            <div class="col-12 border border-dark rounded">
+                                <p>
+                                    <strong>Certificaciones Requeridas:</strong> /  Required Certifications:
+                                </p>
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th><p class="weights"><strong class="weights">Certificación:</strong> / Certification:</p></th>
+                                            <th><p class="weights"><strong class="weights">Tipo de prod:</strong> / Product Type:</p></th>
+                                            <th><p class="weights"><strong class="weights">Especificación:</strong> / Specification:</p></th>
+                                            <th><p class="weights"><strong class="weights">Tamaño muestra:</strong> / Sample Size:</p></th>
+                                            <th><p class="weights"><strong class="weights">Scan Plan:</strong> / Scan Plan:</p></th>
+                                            <th><p class="weights"><strong class="weights">Dib. áreas críticas:</strong> / Critical area dwg:</p></th>
+                                            <th><p class="weights"><strong class="weights">Tipo de certificación:</strong> / Type of certification:</p></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach="o.product_certifications" t-as="certification">
+                                            <td><span t-field="certification.name"/></td>
+                                            <td><span t-field="certification.type"/></td>
+                                            <td><span t-field="certification.specification"/></td>
+                                            <td><span t-field="certification.sample_size"/></td>
+                                            <td><span t-field="certification.scan_plan"/></td>
+                                            <td><span t-field="certification.draw_area"/></td>
+                                            <td><span t-field="certification.certification_type"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row mt32 mb32">
+                            <div class="col-12 border border-dark rounded">
+                                <table class="table table-sm o_main_table">
+                                    <tbody>
+                                        <span t-foreach="o.product_mrp" t-as="mrp_id">
+                                            <tr>
+                                                <td>
+                                                    <div class="row">
+                                                        <div class="col-4 border border-dark rounded">
+                                                            <table class="table table-sm o_main_table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th><p class="weights"><strong>Materiales requeridos:</strong> / Required materials:</p></th>
+                                                                    </tr>
+                                                                    <tr t-foreach="mrp_id.bom_line_ids" t-as="line_id">
+                                                                        <td><span t-field="line_id.product_id.name"/></td>
+                                                                    </tr>
+                                                                </thead>
+                                                            </table>
+                                                        </div>
+                                                        <div class="col-4 border border-dark rounded">
+                                                            <p>
+                                                                <strong>Nombre de la ruta:</strong> / Route name:
+                                                            </p><span t-field="mrp_id.name"/>
+                                                        </div>
+                                                        <div class="col-4 border border-dark rounded">
+                                                            <p>
+                                                                <strong>
+                                                                    <span t-field="mrp_id.default_name"/> ID Ruta:
+                                                                </strong>/
+                                                                <span t-field="mrp_id.default_name" /> Route_ID:
+                                                            </p><span t-field="mrp_id.code"/>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="row">
+                                                        <div class="col-12 border border-dark rounded">
+                                                            <table class="table table-sm">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <p class="weights">
+                                                                                <strong class="weights">Paso:</strong>
+                                                                                / Item:
+                                                                            </p>
+                                                                        </th>
+                                                                        <th>
+                                                                            <p class="weights">
+                                                                                <strong class="weights">
+                                                                                    Nombre del Proceso - Descripción:
+                                                                                </strong> / Process name - Description :
+                                                                            </p>
+                                                                        </th>
+                                                                        <th>
+                                                                            <p class="weights">
+                                                                                <strong class="weights">Minutos en proceso:
+                                                                                </strong> / Lead minutes:</p></th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr t-foreach="mrp_id.operation_ids"
+                                                                        t-as="operation_id">
+                                                                        <td><span t-field="operation_id.sequence"/></td>
+                                                                        <td>
+                                                                            <p class="weights">
+                                                                                <strong t-field="operation_id.name"/> -
+                                                                                <span
+                                                                                t-field="operation_id.process_notes"/>
+                                                                            </p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <span t-field="operation_id.time_cycle"/>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                                <p>
+                                                                    <strong>Total de minutos en proceso :</strong>
+                                                                    / Total lead-time (minutes):
+                                                                </p><span t-field="mrp_id.time_cycle_manual_total"/> min
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </span>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-12 border border-dark rounded">
+                                <div class="row">
+                                    <div class="col-12 border border-dark rounded">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

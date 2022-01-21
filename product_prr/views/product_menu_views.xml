@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    <menuitem id="menu_stock_prr" name="Product Review Report"-->
+<!--              parent="stock.menu_stock_config_settings"-->
+<!--              sequence="6"/>-->
+
+<!--    <menuitem action="product_prr.product_alloy_categ_form_action"-->
+<!--              id="menu_stock_prr_alloy"-->
+<!--              name="Alloy" parent="menu_stock_prr" sequence="5"/>-->
+</odoo>

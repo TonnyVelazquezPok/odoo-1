@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_mrp_routing_workcenter_form_view" model="ir.ui.view">
+            <field name="name">product.mrp.routing.workcenter</field>
+            <field name="model">mrp.routing.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_routing_workcenter_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='time_cycle']" position="before">
+                    <label for="process_notes"/>
+                    <div>
+                        <field name="process_notes" class="oe_inline"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
