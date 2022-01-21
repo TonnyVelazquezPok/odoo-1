@@ -1,0 +1,593 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="chemical_element_001" model="quality.chemical.element">
+        <field name="name">Hydrogen</field>
+        <field name="symbol">H</field>
+        <field name="number">1</field>
+    </record>
+    <record id="chemical_element_002" model="quality.chemical.element">
+        <field name="name">Helium</field>
+        <field name="symbol">He</field>
+        <field name="number">2</field>
+    </record>
+    <record id="chemical_element_003" model="quality.chemical.element">
+        <field name="name">Lithium</field>
+        <field name="symbol">Li</field>
+        <field name="number">3</field>
+    </record>
+    <record id="chemical_element_004" model="quality.chemical.element">
+        <field name="name">Beryllium</field>
+        <field name="symbol">Be</field>
+        <field name="number">4</field>
+    </record>
+    <record id="chemical_element_005" model="quality.chemical.element">
+        <field name="name">Boron</field>
+        <field name="symbol">B</field>
+        <field name="number">5</field>
+    </record>
+    <record id="chemical_element_006" model="quality.chemical.element">
+        <field name="name">Carbon</field>
+        <field name="symbol">C</field>
+        <field name="number">6</field>
+    </record>
+    <record id="chemical_element_007" model="quality.chemical.element">
+        <field name="name">Nitrogen</field>
+        <field name="symbol">N</field>
+        <field name="number">7</field>
+    </record>
+    <record id="chemical_element_008" model="quality.chemical.element">
+        <field name="name">Oxygen</field>
+        <field name="symbol">O</field>
+        <field name="number">8</field>
+    </record>
+    <record id="chemical_element_009" model="quality.chemical.element">
+        <field name="name">Fluorine</field>
+        <field name="symbol">F</field>
+        <field name="number">9</field>
+    </record>
+    <record id="chemical_element_010" model="quality.chemical.element">
+        <field name="name">Neon</field>
+        <field name="symbol">Ne</field>
+        <field name="number">10</field>
+    </record>
+    <record id="chemical_element_011" model="quality.chemical.element">
+        <field name="name">Sodium</field>
+        <field name="symbol">Na</field>
+        <field name="number">11</field>
+    </record>
+    <record id="chemical_element_012" model="quality.chemical.element">
+        <field name="name">Magnesium</field>
+        <field name="symbol">Mg</field>
+        <field name="number">12</field>
+    </record>
+    <record id="chemical_element_013" model="quality.chemical.element">
+        <field name="name">Aluminium</field>
+        <field name="symbol">Al</field>
+        <field name="number">13</field>
+    </record>
+    <record id="chemical_element_014" model="quality.chemical.element">
+        <field name="name">Silicon</field>
+        <field name="symbol">Si</field>
+        <field name="number">14</field>
+    </record>
+    <record id="chemical_element_015" model="quality.chemical.element">
+        <field name="name">Phosphorus</field>
+        <field name="symbol">P</field>
+        <field name="number">15</field>
+    </record>
+    <record id="chemical_element_016" model="quality.chemical.element">
+        <field name="name">Sulfur</field>
+        <field name="symbol">S</field>
+        <field name="number">16</field>
+    </record>
+    <record id="chemical_element_017" model="quality.chemical.element">
+        <field name="name">Chlorine</field>
+        <field name="symbol">Cl</field>
+        <field name="number">17</field>
+    </record>
+    <record id="chemical_element_018" model="quality.chemical.element">
+        <field name="name">Argon</field>
+        <field name="symbol">Ar</field>
+        <field name="number">18</field>
+    </record>
+    <record id="chemical_element_019" model="quality.chemical.element">
+        <field name="name">Potassium</field>
+        <field name="symbol">K</field>
+        <field name="number">19</field>
+    </record>
+    <record id="chemical_element_020" model="quality.chemical.element">
+        <field name="name">Calcium</field>
+        <field name="symbol">Ca</field>
+        <field name="number">20</field>
+    </record>
+    <record id="chemical_element_021" model="quality.chemical.element">
+        <field name="name">Scandium</field>
+        <field name="symbol">Sc</field>
+        <field name="number">21</field>
+    </record>
+    <record id="chemical_element_022" model="quality.chemical.element">
+        <field name="name">Titanium</field>
+        <field name="symbol">Ti</field>
+        <field name="number">22</field>
+    </record>
+    <record id="chemical_element_023" model="quality.chemical.element">
+        <field name="name">Vanadium</field>
+        <field name="symbol">V</field>
+        <field name="number">23</field>
+    </record>
+    <record id="chemical_element_024" model="quality.chemical.element">
+        <field name="name">Chromium</field>
+        <field name="symbol">Cr</field>
+        <field name="number">24</field>
+    </record>
+    <record id="chemical_element_025" model="quality.chemical.element">
+        <field name="name">Manganese</field>
+        <field name="symbol">Mn</field>
+        <field name="number">25</field>
+    </record>
+    <record id="chemical_element_026" model="quality.chemical.element">
+        <field name="name">Iron</field>
+        <field name="symbol">Fe</field>
+        <field name="number">26</field>
+    </record>
+    <record id="chemical_element_027" model="quality.chemical.element">
+        <field name="name">Cobalt</field>
+        <field name="symbol">Co</field>
+        <field name="number">27</field>
+    </record>
+    <record id="chemical_element_028" model="quality.chemical.element">
+        <field name="name">Nickel</field>
+        <field name="symbol">Ni</field>
+        <field name="number">28</field>
+    </record>
+    <record id="chemical_element_029" model="quality.chemical.element">
+        <field name="name">Copper</field>
+        <field name="symbol">Cu</field>
+        <field name="number">29</field>
+    </record>
+    <record id="chemical_element_030" model="quality.chemical.element">
+        <field name="name">Zinc</field>
+        <field name="symbol">Zn</field>
+        <field name="number">30</field>
+    </record>
+    <record id="chemical_element_031" model="quality.chemical.element">
+        <field name="name">Gallium</field>
+        <field name="symbol">Ga</field>
+        <field name="number">31</field>
+    </record>
+    <record id="chemical_element_032" model="quality.chemical.element">
+        <field name="name">Germanium</field>
+        <field name="symbol">Ge</field>
+        <field name="number">32</field>
+    </record>
+    <record id="chemical_element_033" model="quality.chemical.element">
+        <field name="name">Arsenic</field>
+        <field name="symbol">As</field>
+        <field name="number">33</field>
+    </record>
+    <record id="chemical_element_034" model="quality.chemical.element">
+        <field name="name">Selenium</field>
+        <field name="symbol">Se</field>
+        <field name="number">34</field>
+    </record>
+    <record id="chemical_element_035" model="quality.chemical.element">
+        <field name="name">Bromine</field>
+        <field name="symbol">Br</field>
+        <field name="number">35</field>
+    </record>
+    <record id="chemical_element_036" model="quality.chemical.element">
+        <field name="name">Krypton</field>
+        <field name="symbol">Kr</field>
+        <field name="number">36</field>
+    </record>
+    <record id="chemical_element_037" model="quality.chemical.element">
+        <field name="name">Rubidium</field>
+        <field name="symbol">Rb</field>
+        <field name="number">37</field>
+    </record>
+    <record id="chemical_element_038" model="quality.chemical.element">
+        <field name="name">Strontium</field>
+        <field name="symbol">Sr</field>
+        <field name="number">38</field>
+    </record>
+    <record id="chemical_element_039" model="quality.chemical.element">
+        <field name="name">Yttrium</field>
+        <field name="symbol">Y</field>
+        <field name="number">39</field>
+    </record>
+    <record id="chemical_element_040" model="quality.chemical.element">
+        <field name="name">Zirconium</field>
+        <field name="symbol">Zr</field>
+        <field name="number">40</field>
+    </record>
+    <record id="chemical_element_041" model="quality.chemical.element">
+        <field name="name">Niobium</field>
+        <field name="symbol">Nb</field>
+        <field name="number">41</field>
+    </record>
+    <record id="chemical_element_042" model="quality.chemical.element">
+        <field name="name">Molybdenum</field>
+        <field name="symbol">Mo</field>
+        <field name="number">42</field>
+    </record>
+    <record id="chemical_element_043" model="quality.chemical.element">
+        <field name="name">Technetium</field>
+        <field name="symbol">Tc</field>
+        <field name="number">43</field>
+    </record>
+    <record id="chemical_element_044" model="quality.chemical.element">
+        <field name="name">Ruthenium</field>
+        <field name="symbol">Ru</field>
+        <field name="number">44</field>
+    </record>
+    <record id="chemical_element_045" model="quality.chemical.element">
+        <field name="name">Rhodium</field>
+        <field name="symbol">Rh</field>
+        <field name="number">45</field>
+    </record>
+    <record id="chemical_element_046" model="quality.chemical.element">
+        <field name="name">Palladium</field>
+        <field name="symbol">Pd</field>
+        <field name="number">46</field>
+    </record>
+    <record id="chemical_element_047" model="quality.chemical.element">
+        <field name="name">Silver</field>
+        <field name="symbol">Ag</field>
+        <field name="number">47</field>
+    </record>
+    <record id="chemical_element_048" model="quality.chemical.element">
+        <field name="name">Cadmium</field>
+        <field name="symbol">Cd</field>
+        <field name="number">48</field>
+    </record>
+    <record id="chemical_element_049" model="quality.chemical.element">
+        <field name="name">Indium</field>
+        <field name="symbol">In</field>
+        <field name="number">49</field>
+    </record>
+    <record id="chemical_element_050" model="quality.chemical.element">
+        <field name="name">Tin</field>
+        <field name="symbol">Sn</field>
+        <field name="number">50</field>
+    </record>
+    <record id="chemical_element_051" model="quality.chemical.element">
+        <field name="name">Antimony</field>
+        <field name="symbol">Sb</field>
+        <field name="number">51</field>
+    </record>
+    <record id="chemical_element_052" model="quality.chemical.element">
+        <field name="name">Tellurium</field>
+        <field name="symbol">Te</field>
+        <field name="number">52</field>
+    </record>
+    <record id="chemical_element_053" model="quality.chemical.element">
+        <field name="name">Iodine</field>
+        <field name="symbol">I</field>
+        <field name="number">53</field>
+    </record>
+    <record id="chemical_element_054" model="quality.chemical.element">
+        <field name="name">Xenon</field>
+        <field name="symbol">Xe</field>
+        <field name="number">54</field>
+    </record>
+    <record id="chemical_element_055" model="quality.chemical.element">
+        <field name="name">Caesium</field>
+        <field name="symbol">Cs</field>
+        <field name="number">55</field>
+    </record>
+    <record id="chemical_element_056" model="quality.chemical.element">
+        <field name="name">Barium</field>
+        <field name="symbol">Ba</field>
+        <field name="number">56</field>
+    </record>
+    <record id="chemical_element_057" model="quality.chemical.element">
+        <field name="name">Lanthanum</field>
+        <field name="symbol">La</field>
+        <field name="number">57</field>
+    </record>
+    <record id="chemical_element_058" model="quality.chemical.element">
+        <field name="name">Cerium</field>
+        <field name="symbol">Ce</field>
+        <field name="number">58</field>
+    </record>
+    <record id="chemical_element_059" model="quality.chemical.element">
+        <field name="name">Praseodymium</field>
+        <field name="symbol">Pr</field>
+        <field name="number">59</field>
+    </record>
+    <record id="chemical_element_060" model="quality.chemical.element">
+        <field name="name">Neodymium</field>
+        <field name="symbol">Nd</field>
+        <field name="number">60</field>
+    </record>
+    <record id="chemical_element_061" model="quality.chemical.element">
+        <field name="name">Promethium</field>
+        <field name="symbol">Pm</field>
+        <field name="number">61</field>
+    </record>
+    <record id="chemical_element_062" model="quality.chemical.element">
+        <field name="name">Samarium</field>
+        <field name="symbol">Sm</field>
+        <field name="number">62</field>
+    </record>
+    <record id="chemical_element_063" model="quality.chemical.element">
+        <field name="name">Europium</field>
+        <field name="symbol">Eu</field>
+        <field name="number">63</field>
+    </record>
+    <record id="chemical_element_064" model="quality.chemical.element">
+        <field name="name">Gadolinium</field>
+        <field name="symbol">Gd</field>
+        <field name="number">64</field>
+    </record>
+    <record id="chemical_element_065" model="quality.chemical.element">
+        <field name="name">Terbium</field>
+        <field name="symbol">Tb</field>
+        <field name="number">65</field>
+    </record>
+    <record id="chemical_element_066" model="quality.chemical.element">
+        <field name="name">Dysprosium</field>
+        <field name="symbol">Dy</field>
+        <field name="number">66</field>
+    </record>
+    <record id="chemical_element_067" model="quality.chemical.element">
+        <field name="name">Holmium</field>
+        <field name="symbol">Ho</field>
+        <field name="number">67</field>
+    </record>
+    <record id="chemical_element_068" model="quality.chemical.element">
+        <field name="name">Erbium</field>
+        <field name="symbol">Er</field>
+        <field name="number">68</field>
+    </record>
+    <record id="chemical_element_069" model="quality.chemical.element">
+        <field name="name">Thulium</field>
+        <field name="symbol">Tm</field>
+        <field name="number">69</field>
+    </record>
+    <record id="chemical_element_070" model="quality.chemical.element">
+        <field name="name">Ytterbium</field>
+        <field name="symbol">Yb</field>
+        <field name="number">70</field>
+    </record>
+    <record id="chemical_element_071" model="quality.chemical.element">
+        <field name="name">Lutetium</field>
+        <field name="symbol">Lu</field>
+        <field name="number">71</field>
+    </record>
+    <record id="chemical_element_072" model="quality.chemical.element">
+        <field name="name">Hafnium</field>
+        <field name="symbol">Hf</field>
+        <field name="number">72</field>
+    </record>
+    <record id="chemical_element_073" model="quality.chemical.element">
+        <field name="name">Tantalum</field>
+        <field name="symbol">Ta</field>
+        <field name="number">73</field>
+    </record>
+    <record id="chemical_element_074" model="quality.chemical.element">
+        <field name="name">Tungsten</field>
+        <field name="symbol">W</field>
+        <field name="number">74</field>
+    </record>
+    <record id="chemical_element_075" model="quality.chemical.element">
+        <field name="name">Rhenium</field>
+        <field name="symbol">Re</field>
+        <field name="number">75</field>
+    </record>
+    <record id="chemical_element_076" model="quality.chemical.element">
+        <field name="name">Osmium</field>
+        <field name="symbol">Os</field>
+        <field name="number">76</field>
+    </record>
+    <record id="chemical_element_077" model="quality.chemical.element">
+        <field name="name">Iridium</field>
+        <field name="symbol">Ir</field>
+        <field name="number">77</field>
+    </record>
+    <record id="chemical_element_078" model="quality.chemical.element">
+        <field name="name">Platinum</field>
+        <field name="symbol">Pt</field>
+        <field name="number">78</field>
+    </record>
+    <record id="chemical_element_079" model="quality.chemical.element">
+        <field name="name">Gold</field>
+        <field name="symbol">Au</field>
+        <field name="number">79</field>
+    </record>
+    <record id="chemical_element_080" model="quality.chemical.element">
+        <field name="name">Mercury</field>
+        <field name="symbol">Hg</field>
+        <field name="number">80</field>
+    </record>
+    <record id="chemical_element_081" model="quality.chemical.element">
+        <field name="name">Thallium</field>
+        <field name="symbol">Tl</field>
+        <field name="number">81</field>
+    </record>
+    <record id="chemical_element_082" model="quality.chemical.element">
+        <field name="name">Lead</field>
+        <field name="symbol">Pb</field>
+        <field name="number">82</field>
+    </record>
+    <record id="chemical_element_083" model="quality.chemical.element">
+        <field name="name">Bismuth</field>
+        <field name="symbol">Bi</field>
+        <field name="number">83</field>
+    </record>
+    <record id="chemical_element_084" model="quality.chemical.element">
+        <field name="name">Polonium</field>
+        <field name="symbol">Po</field>
+        <field name="number">84</field>
+    </record>
+    <record id="chemical_element_085" model="quality.chemical.element">
+        <field name="name">Astatine</field>
+        <field name="symbol">At</field>
+        <field name="number">85</field>
+    </record>
+    <record id="chemical_element_086" model="quality.chemical.element">
+        <field name="name">Radon</field>
+        <field name="symbol">Rn</field>
+        <field name="number">86</field>
+    </record>
+    <record id="chemical_element_087" model="quality.chemical.element">
+        <field name="name">Francium</field>
+        <field name="symbol">Fr</field>
+        <field name="number">87</field>
+    </record>
+    <record id="chemical_element_088" model="quality.chemical.element">
+        <field name="name">Radium</field>
+        <field name="symbol">Ra</field>
+        <field name="number">88</field>
+    </record>
+    <record id="chemical_element_089" model="quality.chemical.element">
+        <field name="name">Actinium</field>
+        <field name="symbol">Ac</field>
+        <field name="number">89</field>
+    </record>
+    <record id="chemical_element_090" model="quality.chemical.element">
+        <field name="name">Thorium</field>
+        <field name="symbol">Th</field>
+        <field name="number">90</field>
+    </record>
+    <record id="chemical_element_091" model="quality.chemical.element">
+        <field name="name">Protactinium</field>
+        <field name="symbol">Pa</field>
+        <field name="number">91</field>
+    </record>
+    <record id="chemical_element_092" model="quality.chemical.element">
+        <field name="name">Uranium</field>
+        <field name="symbol">U</field>
+        <field name="number">92</field>
+    </record>
+    <record id="chemical_element_093" model="quality.chemical.element">
+        <field name="name">Neptunium</field>
+        <field name="symbol">Np</field>
+        <field name="number">93</field>
+    </record>
+    <record id="chemical_element_094" model="quality.chemical.element">
+        <field name="name">Plutonium</field>
+        <field name="symbol">Pu</field>
+        <field name="number">94</field>
+    </record>
+    <record id="chemical_element_095" model="quality.chemical.element">
+        <field name="name">Americium</field>
+        <field name="symbol">Am</field>
+        <field name="number">95</field>
+    </record>
+    <record id="chemical_element_096" model="quality.chemical.element">
+        <field name="name">Curium</field>
+        <field name="symbol">Cm</field>
+        <field name="number">96</field>
+    </record>
+    <record id="chemical_element_097" model="quality.chemical.element">
+        <field name="name">Berkelium</field>
+        <field name="symbol">Bk</field>
+        <field name="number">97</field>
+    </record>
+    <record id="chemical_element_098" model="quality.chemical.element">
+        <field name="name">Californium</field>
+        <field name="symbol">Cf</field>
+        <field name="number">98</field>
+    </record>
+    <record id="chemical_element_099" model="quality.chemical.element">
+        <field name="name">Einsteinium</field>
+        <field name="symbol">Es</field>
+        <field name="number">99</field>
+    </record>
+    <record id="chemical_element_100" model="quality.chemical.element">
+        <field name="name">Fermium</field>
+        <field name="symbol">Fm</field>
+        <field name="number">100</field>
+    </record>
+    <record id="chemical_element_101" model="quality.chemical.element">
+        <field name="name">Mendelevium</field>
+        <field name="symbol">Md</field>
+        <field name="number">101</field>
+    </record>
+    <record id="chemical_element_102" model="quality.chemical.element">
+        <field name="name">Nobelium</field>
+        <field name="symbol">No</field>
+        <field name="number">102</field>
+    </record>
+    <record id="chemical_element_103" model="quality.chemical.element">
+        <field name="name">Lawrencium</field>
+        <field name="symbol">Lr</field>
+        <field name="number">103</field>
+    </record>
+    <record id="chemical_element_104" model="quality.chemical.element">
+        <field name="name">Rutherfordium</field>
+        <field name="symbol">Rf</field>
+        <field name="number">104</field>
+    </record>
+    <record id="chemical_element_105" model="quality.chemical.element">
+        <field name="name">Dubnium</field>
+        <field name="symbol">Db</field>
+        <field name="number">105</field>
+    </record>
+    <record id="chemical_element_106" model="quality.chemical.element">
+        <field name="name">Seaborgium</field>
+        <field name="symbol">Sg</field>
+        <field name="number">106</field>
+    </record>
+    <record id="chemical_element_107" model="quality.chemical.element">
+        <field name="name">Bohrium</field>
+        <field name="symbol">Bh</field>
+        <field name="number">107</field>
+    </record>
+    <record id="chemical_element_108" model="quality.chemical.element">
+        <field name="name">Hassium</field>
+        <field name="symbol">Hs</field>
+        <field name="number">108</field>
+    </record>
+    <record id="chemical_element_109" model="quality.chemical.element">
+        <field name="name">Meitnerium</field>
+        <field name="symbol">Mt</field>
+        <field name="number">109</field>
+    </record>
+    <record id="chemical_element_110" model="quality.chemical.element">
+        <field name="name">Darmstadtium</field>
+        <field name="symbol">Ds</field>
+        <field name="number">110</field>
+    </record>
+    <record id="chemical_element_111" model="quality.chemical.element">
+        <field name="name">Roentgenium</field>
+        <field name="symbol">Rg</field>
+        <field name="number">111</field>
+    </record>
+    <record id="chemical_element_112" model="quality.chemical.element">
+        <field name="name">Copernicium</field>
+        <field name="symbol">Cn</field>
+        <field name="number">112</field>
+    </record>
+    <record id="chemical_element_113" model="quality.chemical.element">
+        <field name="name">Nihonium</field>
+        <field name="symbol">Nh</field>
+        <field name="number">113</field>
+    </record>
+    <record id="chemical_element_114" model="quality.chemical.element">
+        <field name="name">Flerovium</field>
+        <field name="symbol">Fl</field>
+        <field name="number">114</field>
+    </record>
+    <record id="chemical_element_115" model="quality.chemical.element">
+        <field name="name">Moscovium</field>
+        <field name="symbol">Mc</field>
+        <field name="number">115</field>
+    </record>
+    <record id="chemical_element_116" model="quality.chemical.element">
+        <field name="name">Livermorium</field>
+        <field name="symbol">Lv</field>
+        <field name="number">116</field>
+    </record>
+    <record id="chemical_element_117" model="quality.chemical.element">
+        <field name="name">Tennessine</field>
+        <field name="symbol">Ts</field>
+        <field name="number">117</field>
+    </record>
+    <record id="chemical_element_118" model="quality.chemical.element">
+        <field name="name">Oganesson</field>
+        <field name="symbol">Og</field>
+        <field name="number">118</field>
+    </record>
+</odoo>
