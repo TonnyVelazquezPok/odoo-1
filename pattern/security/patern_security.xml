@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="patter_register" model="res.groups">
+            <field name="name">Model Register</field>
+            <field name="category_id" ref="group_pattern"/>
+        </record>
+        <record id="patter_validator" model="res.groups">
+            <field name="name">Model Validator</field>
+            <field name="category_id" ref="group_pattern"/>
+        </record>
+    </data>
+</odoo>

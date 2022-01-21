@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pattern,pattern,model_pattern,patter_register,1,1,1,0
+access_pattern_review,pattern_review,model_pattern_review,patter_register,1,1,1,0
+access_pattern_files,pattern_files,model_pattern_files,patter_register,1,1,1,1
+access_pattern_category,pattern_category,model_pattern_category,patter_register,1,1,1,1
+access_pattern_repairs,pattern_repairs,model_pattern_repairs,patter_register,1,1,1,1
+access_pattern_product_tag,pattern_product_tag,model_pattern_product_tag,patter_register,1,1,1,1
+
+access_wizard_pattern_state,wizard_pattern_state,model_wizard_pattern_state,patter_validator,1,1,1,0
