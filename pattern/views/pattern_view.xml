@@ -1,0 +1,178 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="pattern_list">
+      <field name="name">pattern.list</field>
+      <field name="model">pattern</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name = 'product_id' />
+          <field name = 'customer_part_id' />
+          <field name = 'provider_id' />
+          <field name = 'owner_id' />
+          <field name = 'location' />
+          <field name = 'active' />
+        </tree>
+      </field>
+    </record>
+
+    <record id="pattern_form" model="ir.ui.view">
+      <field name="name">pattern.form</field>
+      <field name="model">pattern</field>
+      <field name="arch" type="xml">
+        <form string="Model">
+          <header>
+            <button name="button_release" string="Release" type="object"
+              attrs="{'invisible': [('state', '=', 'draft')]}" />
+            <button name="button_repair" string="Repair" type="object" 
+              attrs="{'invisible': [('state', '=', 'draft')]}" />
+            <field name="state" widget="statusbar" />
+          </header>
+          <sheet>
+              <div class="oe_title" attrs="{'invisible': [('state', '=', 'draft')]}">
+                <label for="name" class="oe_edit_only"/>
+                <h1><field name="name" readonly="1"/></h1>
+              </div>
+            <group>
+              <group>
+                <field name = 'product_id' />
+                <field name = 'product_tag_ids' widget="many2many_tags" />
+                <field name = 'customer_part_id' />
+                <field name = 'date' />
+                <field name = 'date_due' />
+                <field name = 'pattern_status' />
+              </group>
+              <group>
+                <field name = 'location' />
+                <field name = 'location_detail' attrs="{'invisible': [('location', '!=', 'warehouse')]}" />
+                <field name = 'release_user' />
+                <field name = 'release_date' />
+                <field name = 'release' />
+                <field name = 'active' />
+              </group>
+            </group>
+            <notebook>
+              <page name="page_mould_detail" string="Model">
+                <group>
+                  <group>
+                    <field name = 'provider_id' />
+                    <field name = 'owner_id' />
+                    <field name = 'is_extern' />
+                    <field name = 'model_category' />
+                    <field name = 'validity' />
+                    <field name = 'model_capacity' />
+                    <field name = 'component_cant' />
+                  </group>
+                  <group>
+                    <field name = 'model_uom_id' />
+                    <field name = 'base' />
+                    <field name = 'height' />
+                    <field name = 'width' />
+                    <field name = 'description' />
+                    <field name = 'quantity' />
+                  </group>
+                </group>
+              </page>
+              <page name="page_files_review" string="Files">
+                <field name = 'files_review'>
+                  <tree editable="top">
+                    <field name = "component" />
+                    <field name = "file" widget="many2many_binary" class="oe_inline" options='{"size": [30, 30]}'/>
+                  </tree>
+                </field>
+              </page>
+              <page name="page_review_id" string="Reviews" attrs="{'invisible': [('state', '=', 'draft')]}">
+                <field name = 'review_id' default_order="date desc">
+                  <tree editable="top">
+                    <field name = "date" />
+                    <field name = "result" />
+                    <field name = "notes" />
+                  </tree>
+                </field>
+              </page>
+              <page name="page_repairs" string="Repairs" attrs="{'invisible': [('state', '=', 'draft')]}">
+                  <field name = 'repairs' default_order="date_send desc">
+                    <tree editable="top">
+                      <field name = "date_send" />
+                      <field name = "date_return" />
+                      <field name = "notes" />
+                    </tree>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+          <div class="oe_chatter">
+              <field name="message_follower_ids" widget="mail_followers"/>
+              <field name="message_ids" widget="mail_thread"/>
+            </div>
+        </form>
+      </field>
+    </record>
+
+    <record id="pattern_file_form" model="ir.ui.view">
+      <field name="name">pattern.files</field>
+      <field name="model">pattern.files</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <field name="file" widget="many2many_binary" class="oe_inline" />
+              <field name="component"></field>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="pattern_review_form" model="ir.ui.view">
+      <field name="name">pattern.review</field>
+      <field name="model">pattern.review</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+             <field name="date"></field>
+             <field name="result"></field>
+             <field name="notes"></field>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="pattern_repair_form" model="ir.ui.view">
+      <field name="name">pattern.repair</field>
+      <field name="model">pattern.repairs</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="date_send"></field>
+              <field name="date_return"></field>
+              <field name="notes"></field>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="pattern_action_window">
+      <field name="name">Model Control</field>
+      <field name="res_model">pattern</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="Modelos" id="pattern_padre"/>
+
+    <!-- menu categories -->
+    <menuitem name="Modelos SubMenu" id="pattern_hijo" parent="pattern_padre"/>
+
+    <!-- actions -->
+    <menuitem name="Modelos Menu Nieto" id="pattern_nieto" parent="pattern_hijo"
+              action="pattern_action_window"/>
+
+  </data>
+</odoo>

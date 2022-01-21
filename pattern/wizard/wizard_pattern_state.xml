@@ -1,0 +1,34 @@
+<odoo>
+
+    <record model="ir.ui.view" id="wizard_pattern_state_form_view">
+        <field name="name">Formulario para Cambiar Estado del Modelo</field>
+        <field name="model">wizard.pattern.state</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="pattern_id" readonly="1"/>
+                        <field name="release_date"/>
+                        <field name="release_user"/>
+                        <field name="state"/>
+                        <field name="location"/>
+                        <field name = 'location_detail' attrs="{'invisible': [('location', '!=', 'warehouse')]}" />
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="button_add_release" class="btn-primary" string="Liberar" type="object"/>
+                    <button special="cancel" string="Cancelar"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="wizard_pattern_state_action_window">
+        <field name="name">Wizard Model state</field>
+        <field name="res_model">wizard.pattern.state</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+    </record>
+
+
+</odoo>
