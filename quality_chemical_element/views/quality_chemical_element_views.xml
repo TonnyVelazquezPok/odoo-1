@@ -1,0 +1,47 @@
+<odoo>
+
+  <record id="quality_chemical_element_view_form" model="ir.ui.view">
+    <field name="name">quality.chemical.element.form</field>
+    <field name="model">quality.chemical.element</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <div class="oe_title">
+            <label for="symbol" string="Symbol"/>
+            <h1>
+              <field name="symbol" placeholder="Element symbol"/>
+            </h1>
+            <label for="name" string="Element"/>
+            <h1>
+              <field name="name"/>
+            </h1>
+          </div>
+          <group>
+            <field name="number"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="quality_chemical_element_view_tree" model="ir.ui.view">
+    <field name="name">quality.chemical.element.tree</field>
+    <field name="model">quality.chemical.element</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="symbol"/>
+        <field name="number"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- actions opening views on models -->
+
+  <record model="ir.actions.act_window" id="quality_chemical_element_action">
+    <field name="name">Chemical Elements</field>
+    <field name="res_model">quality.chemical.element</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+</odoo>

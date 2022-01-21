@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<odoo>
+     <!-- Top menu item -->
+     <menuitem id="quality_menu_root" name="Quality"/>
+     <!-- menu categories -->
+     <menuitem id="quality_chemical_element_menu" name="Elements" parent="quality_menu_root"/>
+     <!-- actions -->
+     <menuitem id="quality_chemical_element_menu_list" name="List" parent="quality_chemical_element_menu"
+               action="quality_chemical_element_action"/>
+</odoo>
