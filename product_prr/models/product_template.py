@@ -104,14 +104,14 @@ class ProductTemplate(models.AbstractModel):
     @api.depends('casting_weight', 'gross_weight')
     def _compute_get_gross_yield(self):
         for product in self:
-            product.gross_yield = (product.casting_weight / product.gross_weight)*100
+            product.gross_yield = (product.casting_weight / product.gross_weight)*100 if product.gross_weight else 0
 
     @api.depends('part_weight', 'gross_weight')
     def _compute_get_casting_yield(self):
         for product in self:
-            product.casting_yield = (product.part_weight / product.gross_weight)*100
+            product.casting_yield = (product.part_weight / product.gross_weight)*100 if product.gross_weight else 0
 
     @api.depends('part_weight', 'gross_weight')
     def _compute_get_total_yield(self):
         for product in self:
-            product.total_yield = (product.part_weight / product.gross_weight)*100
+            product.total_yield = (product.part_weight / product.gross_weight)*100 if product.gross_weight else 0
