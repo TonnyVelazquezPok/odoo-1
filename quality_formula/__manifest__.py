@@ -17,4 +17,5 @@
         'security/ir.model.access.csv',
         'views/quality_formula_view.xml'
     ],
+    'license': 'Other proprietary',
 }

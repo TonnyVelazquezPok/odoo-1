@@ -28,4 +28,5 @@
 
         "report/product_prr_report.xml",
     ],
+    'license': 'Other proprietary',
 }

@@ -31,4 +31,5 @@
         'views/pattern_view.xml',
         'wizard/wizard_pattern_state.xml',
     ],
+    'license': 'Other proprietary',
 }
