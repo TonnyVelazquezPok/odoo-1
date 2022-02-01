@@ -7,32 +7,25 @@ class ProductTemplate(models.AbstractModel):
     _inherit = 'product.template'
 
     mold_qty = fields.Float(
-        size=20,
         string='Quantity per mold',
     )
     injection_qty = fields.Float(
-        size=20,
         string='Amount per injection'
     )
     gross_weight = fields.Float(
-        string="Gross weight",
-        size=20,
+        string="Gross weight"
     )
     casting_weight = fields.Float(
-        string="Casting weight",
-        size=20,
+        string="Casting weight"
     )
     part_weight = fields.Float(
-        string="Part weight",
-        size=20,
+        string="Part weight"
     )
     pwm = fields.Float(
-        string="PWM",
-        size=20,
+        string="PWM"
     )
     shipping_weight = fields.Float(
-        string="Shipping weight",
-        size=20,
+        string="Shipping weight"
     )
     mould_type = fields.Selection(
         [
