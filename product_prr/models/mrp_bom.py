@@ -8,12 +8,12 @@ class MrpBom(models.Model):
         string='Name'
     )
     default = fields.Boolean(
-        strong='Default',
-        default=False,
+        string='Default',
+        default=False
     )
     default_name = fields.Char(
         string='Name',
-        compute='_compute_get_default_name',
+        compute='_compute_get_default_name'
     )
     time_cycle_manual_total = fields.Float(
         'Total ',

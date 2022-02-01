@@ -4,5 +4,5 @@ class MrpRoutingWorkcenter(models.Model):
     _inherit = 'mrp.routing.workcenter'
 
     process_notes = fields.Text(
-        string='Procces notes',
+        string='Procces notes'
     )

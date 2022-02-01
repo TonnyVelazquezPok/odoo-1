@@ -13,19 +13,18 @@ class ProductIssues(models.Model):
     )
     drawing_owner = fields.Many2one(
         comodel_name='res.partner',
-        string='Drawing owner',
+        string='Drawing owner'
     )
     drawing_number = fields.Char(
         size=50,
-        string='Drawing number',
+        string='Drawing number'
     )
     drawing_review = fields.Char(
         size=50,
-        string='Drawing review',
+        string='Drawing review'
     )
     drawing_date_revision = fields.Datetime(
-        size=50,
-        string='Drawing date revision',
+        string='Drawing date revision'
     )
     drawing_file = fields.Many2many(
         'ir.attachment',
@@ -37,7 +36,7 @@ class ProductIssues(models.Model):
             ('yes', 'Yes'),
             ('no', 'No'),
         ],
-        string="See production?",
+        string="See production?"
     )
     drawing_type = fields.Selection(
         [
@@ -102,5 +101,5 @@ class ProductIssues(models.Model):
             ('sw_solido','SW - Solido'),
             ('wtr_wall_thickness_report','WTR- Wall Thickness Report'),
         ],
-        string='Drawing type',
+        string='Drawing type'
     )

@@ -31,9 +31,9 @@ class ProductTemplate(models.AbstractModel):
         [
             ("ceramic molding", "Ceramic molding"),
             ("sand molding", "Sand molding"),
-            ("n/a", "N/A"),
+            ("n/a", "N/A")
         ],
-        string="Mould type",
+        string="Mould type"
     )
     gross_yield = fields.Float(
         string="Gross yield",
@@ -49,56 +49,56 @@ class ProductTemplate(models.AbstractModel):
     )
     red_equ = fields.Char(
         string='RED EQ',
-        size=50,
+        size=50
     )
     avr = fields.Char(
         string='AVR',
-        size=50,
+        size=50
     )
     smr = fields.Char(
         string='SMR',
-        size=50,
+        size=50
     )
     cmr = fields.Char(
         string='CMR',
-        size=50,
+        size=50
     )
     coupon = fields.Char(
         string='Coupon',
-        size=50,
+        size=50
     )
     product_customer_id = fields.One2many(
         comodel_name='product.customer',
         inverse_name='product_template_id',
-        string='Customer Products',
+        string='Customer Products'
     )
     welding_documents =fields.One2many(
         comodel_name='product.welding.specification.document',
         inverse_name='product_template_id',
-        string='Welding documents files',
+        string='Welding documents files'
     )
     external_specification =fields.Many2one(
         'quality.specification',
-        string='External Specification',
+        string='External Specification'
     )
     internal_specification =fields.Many2one(
         'quality.specification',
-        string='Internal Specification',
+        string='Internal Specification'
     )
     drawing_files = fields.One2many(
         comodel_name='product.issues',
         inverse_name='product_template_id',
-        string='Drawing files',
+        string='Drawing files'
     )
     product_certifications = fields.One2many(
         comodel_name='product.cert',
         inverse_name='product_template_id',
-        string='Product Certification',
+        string='Product Certification'
     )
     product_mrp = fields.One2many(
         comodel_name='mrp.bom',
         inverse_name='product_tmpl_id',
-        string='Product bom',
+        string='Product bom'
     )
 
     @api.depends('casting_weight', 'gross_weight')

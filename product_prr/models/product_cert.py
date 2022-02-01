@@ -6,15 +6,15 @@ class ProductCert(models.Model):
 
     specification =fields.Many2one(
         'quality.specification',
-        string='Specification',
+        string='Specification'
     )
     scan_plan = fields.Char(
         string='Scan plan',
-        size=50,
+        size=50
     )
     draw_area = fields.Char(
         string='Draw area',
-        size=50,
+        size=50
     )
     certification_type = fields.Char(
         string='Certification type',
@@ -30,20 +30,20 @@ class ProductCert(models.Model):
         help='You can attach the copy of your Letter'
     )
     statement_mtr = fields.Boolean(
-        strong='Statement on MTR',
-        default=False,
+        string='Statement on MTR',
+        default=False
     )
     table_chart_image_mtr = fields.Boolean(
-        strong='Table/Chart/Image on MTR',
-        default=False,
+        string='Table/Chart/Image on MTR',
+        default=False
     )
     pok_format = fields.Boolean(
-        strong='Individual Report (POK format)',
-        default=False,
+        string='Individual Report (POK format)',
+        default=False
     )
     customer_format = fields.Boolean(
-        strong='Individual Report (Customer format)',
-        default=False,
+        string='Individual Report (Customer format)',
+        default=False
     )
     name = fields.Selection(
         [
@@ -76,7 +76,7 @@ class ProductCert(models.Model):
             ('83_welding', '83 - Welding Repair'),
             ('99_shipment', '99 - Verify Before Shipment'),
         ],
-        string='Certification',
+        string='Certification'
     )
     type = fields.Selection(
         [
@@ -98,7 +98,7 @@ class ProductCert(models.Model):
             ('solo_pa', 'Solo PA'),
             ('solo_pa_fund.', 'Solo PA Fund.'),
         ],
-        string='Product Type',
+        string='Product Type'
     )
     sample_size = fields.Selection(
         [
@@ -138,7 +138,7 @@ class ProductCert(models.Model):
             ('solo_pa', 'Solo PA'),
             ('solo_pa_fundicion', 'Solo PA Fundicion'),
         ],
-        string='Sample size',
+        string='Sample size'
     )
 
     @api.depends('statement_mtr', 'table_chart_image_mtr', 'pok_format', 'customer_format')

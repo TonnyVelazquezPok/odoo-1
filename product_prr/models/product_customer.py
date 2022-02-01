@@ -6,11 +6,11 @@ class ProductCustomer(models.Model):
 
     part_number = fields.Char(
         size=50,
-        string='Part Number',
+        string='Part Number'
     )
     customers = fields.Many2many(
         comodel_name='res.partner',
-        string="Customers",
+        string="Customers"
     )
     product_template_id = fields.Many2one(
         comodel_name='product.template',

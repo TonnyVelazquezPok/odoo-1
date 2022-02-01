@@ -6,13 +6,13 @@ class ProductWeldingSpecificationDocument(models.Model):
 
     name = fields.Char(
         string='Name',
-        size=50,
+        size=50
     )
     notes = fields.Text(
-        string="Notes",
+        string="Notes"
     )
     description = fields.Text(
-        string="Description",
+        string="Description"
     )
     document_file = fields.Many2many(
         'ir.attachment',
