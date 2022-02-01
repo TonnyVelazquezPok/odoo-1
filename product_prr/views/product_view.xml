@@ -162,6 +162,7 @@
         </field>
     </record>
 
+    <!--
     <data>
         <template id="assets_backend" name="PRR View" inherit_id="web._assets_primary_variables">
             <xpath expr="." position="inside">
@@ -169,5 +170,6 @@
             </xpath>
         </template>
     </data>
+    -->
 
 </odoo>
