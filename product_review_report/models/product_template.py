@@ -8,6 +8,8 @@ class ProductTemplate(models.AbstractModel):
 
     mold_qty = fields.Float(
         string='Quantity per mold',
+        default= 1.0,
+        digits= (4,2)
     )
     injection_qty = fields.Float(
         string='Amount per injection'
@@ -27,14 +29,21 @@ class ProductTemplate(models.AbstractModel):
     shipping_weight = fields.Float(
         string="Shipping weight"
     )
-    mould_type = fields.Selection(
+
+    mold_type = fields.Selection(
         [
-            ("ceramic molding", "Ceramic molding"),
-            ("sand molding", "Sand molding"),
-            ("n/a", "N/A")
+            ("ceramic", "Ceramic"),
+            ("sand", "Sand"),
+            ("other", "Other")
         ],
-        string="Mould type"
+        string="Mold type"
     )
+
+    material_metal_ratio = fields.Float(
+        string='Material / metal ratio',
+        digits=(6,2)
+    )
+
     gross_yield = fields.Float(
         string="Gross yield",
         compute='_compute_get_gross_yield'
@@ -51,18 +60,11 @@ class ProductTemplate(models.AbstractModel):
         string='RED EQ',
         size=50
     )
-    avr = fields.Char(
-        string='AVR',
-        size=50
+    area_volume_ratio = fields.Float(
+        string='Area volume ratio',
+        digits=(6,2)
     )
-    smr = fields.Char(
-        string='SMR',
-        size=50
-    )
-    cmr = fields.Char(
-        string='CMR',
-        size=50
-    )
+
     coupon = fields.Char(
         string='Coupon',
         size=50
@@ -104,14 +106,14 @@ class ProductTemplate(models.AbstractModel):
     @api.depends('casting_weight', 'gross_weight')
     def _compute_get_gross_yield(self):
         for product in self:
-            product.gross_yield = (product.casting_weight / product.gross_weight)*100 if product.gross_weight else 0
+            product.gross_yield = (product.casting_weight / product.gross_weight) * 100 if product.gross_weight else 0
 
     @api.depends('part_weight', 'gross_weight')
     def _compute_get_casting_yield(self):
         for product in self:
-            product.casting_yield = (product.part_weight / product.gross_weight)*100 if product.gross_weight else 0
+            product.casting_yield = (product.part_weight / product.gross_weight) * 100 if product.gross_weight else 0
 
     @api.depends('part_weight', 'gross_weight')
     def _compute_get_total_yield(self):
         for product in self:
-            product.total_yield = (product.part_weight / product.gross_weight)*100 if product.gross_weight else 0
+            product.total_yield = (product.part_weight / product.gross_weight) * 100 if product.gross_weight else 0

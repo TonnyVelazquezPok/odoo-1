@@ -5,9 +5,9 @@
         <field name="name">Product Review Report (PRR)</field>
         <field name="model">product.template</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">product_prr.prr_report_view</field>
-        <field name="report_file">product_prr.prr_report_view</field>
-        <field name="binding_model_id" ref="product_prr.model_product_template"/>
+        <field name="report_name">product_review_report.prr_report_view</field>
+        <field name="report_file">product_review_report.prr_report_view</field>
+        <field name="binding_model_id" ref="product_review_report.model_product_template"/>
         <field name="binding_type">report</field>
     </record>
 
@@ -15,16 +15,17 @@
         <field name="name">Time Off Summary</field>
         <field name="model">product.template</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">product_prr.prr_report_view</field>
-        <field name="report_file">product_prr.prr_report_view</field>
+        <field name="report_name">product_review_report.prr_report_view</field>
+        <field name="report_file">product_review_report.prr_report_view</field>
     </record>
+
 
     <template id="prr_report_view">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
                     <div class="page">
-                        <h2 class="text-right">PRODUCT REVIEW REPORT / SHEET </h2>
+                        <h2 class="text-right">Product Review Report / Product Sheet </h2>
 
                         <div class="row mt32 mb32">
                             <div class="col-10 border-dark rounded">
@@ -32,7 +33,7 @@
                                     <div class="col-5 border border-dark rounded">
                                         <p>
                                             <strong>Descripción: </strong>/Description:
-                                        </p><span t-field="o.description"/>
+                                        </p><span t-field="o.description_sale"/>
                                     </div>
                                     <div class="col-4 border border-dark rounded">
                                         <p>
@@ -59,17 +60,12 @@
                                     <div class="col-2 border border-dark rounded">
                                         <p>
                                             <strong>Rel. Area volúmen:</strong> /AVR:
-                                        </p><span t-field="o.avr"/>
+                                        </p><span t-field="o.area_volume_ratio"/>
                                     </div>
                                     <div class="col-2 border border-dark rounded">
                                         <p>
-                                            <strong>Rel. Arena - Metal:</strong> /SMR:
-                                        </p><span t-field="o.smr"/>
-                                    </div>
-                                    <div class="col-2 border border-dark rounded">
-                                        <p>
-                                            <strong>Rel. Cer. - Metal:</strong> /CMR:
-                                        </p><span t-field="o.cmr"/>
+                                            <strong>Rel. Material - Metal:</strong> /SMR:
+                                        </p><span t-field="o.material_metal_ratio"/>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +99,7 @@
                             <div class="col-3 border border-dark rounded">
                                 <p>
                                     <strong>Tipo de Moldeo:</strong> /Mold Type:
-                                </p><span t-field="o.mould_type"/>
+                                </p><span t-field="o.mold_type"/>
                             </div>
                             <div class="col-3 border">
                                 <div class="row mt32 mb32">
@@ -278,14 +274,14 @@
                                                         <div class="col-4 border border-dark rounded">
                                                             <p>
                                                                 <strong>Nombre de la ruta:</strong> / Route name:
-                                                            </p><span t-field="mrp_id.name"/>
+                                                            </p><!--<span t-field="mrp_id.name"/>-->
                                                         </div>
                                                         <div class="col-4 border border-dark rounded">
                                                             <p>
                                                                 <strong>
-                                                                    <span t-field="mrp_id.default_name"/> ID Ruta:
+                                                                    <!--<span t-field="mrp_id.default_name"/> ID Ruta:-->
                                                                 </strong>/
-                                                                <span t-field="mrp_id.default_name" /> Route_ID:
+                                                                <!--<span t-field="mrp_id.default_name" /> Route_ID:-->
                                                             </p><span t-field="mrp_id.code"/>
                                                         </div>
                                                     </div>

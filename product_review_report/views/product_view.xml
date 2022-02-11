@@ -5,7 +5,7 @@
             <field name="name">product.template.common.form.product_prr</field>
             <field name="model">product.template</field>
             <field name="inherit_id" ref="product.product_template_form_view"/>
-            <field name="groups_id" eval="[(6, 0, [ref('product_prr.management') ])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('product_review_report.management') ])]"/>
             <field name="arch" type="xml">
                 <notebook position="inside">
                     <page name="Drawing files" string="Drawing files">
@@ -81,15 +81,14 @@
                     </page>
                 </notebook>
                 <group name="group_general" position="inside">
+                    <field name="mold_type"/>
                     <field name="mold_qty" class="oe_inline"/>
-                    <field name="mould_type"/>
+                    <field name="material_metal_ratio"/>
                     <field name="injection_qty" class="oe_inline"/>
                     <field name="external_specification"/>
                     <field name="internal_specification"/>
                     <field name="red_equ" class="oe_inline"/>
-                    <field name="avr"/>
-                    <field name="smr"/>
-                    <field name="cmr" class="oe_inline"/>
+                    <field name="area_volume_ratio"/>
                     <field name="coupon" class="oe_inline"/>
                 </group>
             </field>

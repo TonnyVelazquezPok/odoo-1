@@ -16,7 +16,9 @@ class MrpBom(models.Model):
 
     @api.depends('operation_ids')
     def _compute_get_total_time_cycle_manual(self):
+
         for mrp in self:
-            for operation in mrp.operation_ids:
-                mrp.time_cycle_manual_total += operation.time_cycle_manual
+            mrp.time_cycle_manual_total = 0
+        #    for operation in mrp.operation_ids:
+        #        mrp.time_cycle_manual_total += operation.time_cycle_manual
 
